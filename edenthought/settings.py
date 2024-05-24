@@ -24,7 +24,7 @@ DEBUG = False
 ALLOWED_HOSTS = ["thoughtpal-django-app.onrender.com"]
 
 # CSRF_TRUSTED_ORIGINS = ["https://thoughtpal-django-app.onrender.com"]
-# CSRF_TRUSTED_ORIGINS = ["https://thoughtpal-django-app.onrender.com"]
+CSRF_TRUSTED_ORIGINS = ["https://thoughtpal-django-app.onrender.com"]
 
 
 # SMTP Configuration
