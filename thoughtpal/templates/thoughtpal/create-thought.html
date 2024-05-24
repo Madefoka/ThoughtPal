@@ -1,0 +1,27 @@
+{% extends "thoughtpal/navbar.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<head>
+  <title>ThoughtPal | Create Thought</title>
+</head>
+<br />
+<div class="container shadow-md p-5 form-layout">
+  <h3>Create a thought</h3>
+  <p>Here you can create a thought and it's content.</p>
+  <br />
+  <form method="POST" autocomplete="off">
+    {% csrf_token %}
+    <!-- stop -->
+    {{ CreateThoughtForm|crispy }}
+    <br />
+    <button
+      class="btn btn-secondary btn-md w-100 btn-block p-3 custom-secondary-button"
+      type="submit"
+    ><i class="fa-solid fa-brain"></i>&nbsp;&nbsp;&nbsp;
+      Create Thought
+    </button>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "thoughtpal/navbar.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+  <title>ThoughtPal | My Thoughts</title>
+  <script
+      src="https://kit.fontawesome.com/50e6a0d77b.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+{% for message in messages %}
+  {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <p id="message-timer" class="alert alert-success float-center text-center message-text custom-secondary-button">
+      <i class="fa-solid fa-check"></i>&nbsp;&nbsp;&nbsp;{{ message}}</p>
+  {% endif %}
+{% endfor %}
+
+{% for thought in AllThoughts %}
+  <br />
+  <div class="container shadow-md p-5 form-layout">
+    {{ thought.title }}<br />
+    {{ thought.content }}<br /><br />
+    {{ thought.date_posted }}<br /><br />
+
+    <a
+      class="btn btn-secondary btn-md w-100 btn-block p-2 custom-secondary-button"
+      type="submit"
+      href="{% url 'update-thought' thought.id %}"
+      >Update</a>&nbsp;
+    <a
+      class="btn btn-secondary btn-md w-100 btn-block p-2 custom-secondary-button"
+      type="submit"
+      href="{% url 'delete-thought' thought.id %}"
+      >Delete</a
+    >
+    <br />
+  </div>
+{% endfor %}
+
+<script src="{% static 'js/app.js' %}"></script>
+{% endblock %}
+
+{% comment %} <script src="{% static 'js/app.js' %}"></script> {% endcomment %}

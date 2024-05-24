@@ -1,0 +1,17 @@
+{% extends "thoughtpal/navbar.html" %} 
+{% block content %}
+
+<title>ThoughtPal | Dashboard</title>
+
+<br />
+<div class="container shadow-md p-5 form-layout">
+  <br />
+  <p>Hi, {{user}}.</p>
+  <img style="width: 100px" src="{{ ProfilePic.profile_pic.url }}" />
+  <br /><br />
+  <p>It looks like today is another great day to make new thought.</p>
+  <p>So let's go and make new one.</p>
+  <br />
+</div>
+
+{% endblock %}

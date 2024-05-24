@@ -1,0 +1,51 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ThoughtPal | Login page</title>
+    <script
+      src="https://kit.fontawesome.com/50e6a0d77b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+  </head>
+  {% for message in messages %} 
+  {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <p id="message-timer" 
+    class="alert alert-success float-center text-center message-text custom-secondary-button">
+    <i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;&nbsp;{{ message}}</p>
+  {% endif %}
+{% endfor %}
+  <br />
+  <div class="container shadow-md p-5 form-layout">
+    <h3>Login to your account</h3>
+    <h5>Share your thoughts with others!</h5>
+    <br /><br />
+    <form method="POST" autocomplete="off">
+      {% csrf_token %}
+      <!-- stop -->
+      {{ LoginForm|crispy }}
+      <br />
+      <button
+        class="btn btn-secondary custom-secondary-button btn-md w-100 btn-block p-3"
+        type="submit"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;&nbsp;Login</button>
+    </form>
+    <br />
+    <div class="text-center">
+      <a href="{% url 'reset_password' %}">Forgotten your password?</a>
+    </div>
+  </div>
+  <br />
+  <script src="{% static 'js/app.js' %}"></script>
+</html>

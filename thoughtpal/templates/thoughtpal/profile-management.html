@@ -1,0 +1,52 @@
+{% extends "thoughtpal/navbar.html" %} 
+{% load static %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+<head>
+  <title>ThoughtPal | Profile Management</title>
+</head>
+<br />
+<div class="container shadow-md p-5 form-layout">
+  <h4>Update profile</h4>
+  <p>Here, you may update your username and email.</p><br>
+  <form method="POST" autocomplete="off">
+    {% csrf_token %} {{ UserUpdateForm|crispy }}
+    <button
+      class="btn btn-secondary btn-md w-100 btn-block p-3 custom-secondary-button"
+      type="submit"
+    >
+      Update
+    </button>
+  </form>
+</div>
+<br />
+<div class="container shadow-md p-5 form-layout">
+  <h4>Update profile picture</h4>
+  <p>Here, you may update your profile picture.</p>
+  <br />
+  <form method="POST" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %} {{ UserProfileUpdate|crispy }}
+    <button
+      class="btn btn-secondary btn-md w-100 btn-block p-3 custom-secondary-button"
+      type="submit"
+    >
+      Upload profile picture
+    </button>
+  </form>
+</div>
+<br />
+
+<div class="container shadow-md p-5 form-layout">
+  <h4>Delete profile</h4>
+  <p>Here, you may delete your profile account.</p>
+  <br />
+  <a
+    class="btn btn-secondary btn-md w-100 btn-block p-3 custom-secondary-button"
+    type="submit"
+    href="{% url 'delete-account' %}"
+    >Proceed to delete page</a
+  >
+</div>
+<br />
+
+{% endblock %}

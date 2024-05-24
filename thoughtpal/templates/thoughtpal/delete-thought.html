@@ -1,0 +1,33 @@
+{% extends "thoughtpal/navbar.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+  <title>ThoughtPal | Delete Thought</title>
+</head>
+
+<br />
+<div class="container shadow-md p-5 form-layout">
+  <h4>Delete a thought</h4>
+  <p>Are you sure you want delete this thought?</p>
+  <br />
+  <form method="POST" autocomplete="off">
+    {% csrf_token %}
+    <!-- stop -->
+    <button
+      class="btn btn-secondary btn-md w-100 btn-block p-2 custom-secondary-button"
+      type="submit"
+    >
+      Delete Thought
+    </button>
+  </form>
+  <br />
+  <a
+    class="btn btn-secondary btn-md w-100 btn-block p-2 custom-secondary-button"
+    type="submit"
+    href="{% url 'my-thoughts' %}"
+    >Go back to my thoughts</a
+  >
+</div>
+
+{% endblock %}

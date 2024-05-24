@@ -1,0 +1,40 @@
+.custom-primary-button {
+    background-color: #618cc7; /* Change this to your desired color */
+    border-color: #618cc7; /* Change this to match the background color */
+  }
+  
+  .custom-primary-button:hover {
+    background-color: #9760d4; /* Change this to a slightly darker color for hover effect */
+    border-color: #9760d4; /* Change this to match the hover background color */
+  }
+.custom-secondary-button {
+    background-color: #618cc7; /* Change this to your desired color */
+    border-color: #618cc7; /* Change this to match the background color */
+  }
+  
+  .custom-secondary-button:hover {
+    background-color: #9760d4; /* Change this to a slightly darker color for hover effect */
+    border-color: #9760d4; /* Change this to match the hover background color */
+  }
+
+.form-layout{
+
+    border-radius: 20px;
+    width: 600px;
+    background: #c4d6e8;
+}
+/* .form-layout{
+
+    border-radius: 20px;
+    width: 600px;
+    background: #e9ecef;
+} */
+
+.message-text{
+
+    color: rgb(6, 63, 113);
+}
+/* .message-text{
+
+    color: aliceblue;
+} */
