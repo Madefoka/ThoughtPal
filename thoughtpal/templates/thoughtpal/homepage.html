@@ -73,19 +73,22 @@
       </ul>
     </div>
   </nav>
-  {% for message in messages %}
-    {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
-      <p id="message-timer" class="alert alert-info float-center text-center message-text custom-secondary-button">
-        <i class="fa-solid fa-trash"></i>&nbsp;&nbsp;&nbsp;{{ message}}</p>
-    {% endif %}
-  {% endfor %}
+  {% for message in messages %} {% if message.level ==
+  DEFAULT_MESSAGE_LEVELS.INFO %}
+  <p
+    id="message-timer"
+    class="alert alert-info float-center text-center message-text custom-secondary-button"
+  >
+    <i class="fa-solid fa-trash"></i>&nbsp;&nbsp;&nbsp;{{ message}}
+  </p>
+  {% endif %} {% endfor %}
 
   <body>
     <br />
     <br />
 
     <div class="text-center">
-      <h2>Edenthought ... A home for your thoughts.</h2>
+      <h2>ThoughtPal ... A home for your thoughts.</h2>
 
       <br />
 
