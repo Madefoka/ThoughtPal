@@ -1,4 +1,5 @@
-{% load static %} {% load crispy_forms_tags %}
+{% load static %}
+{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 
@@ -73,15 +74,14 @@
       </ul>
     </div>
   </nav>
-  {% for message in messages %} {% if message.level ==
-  DEFAULT_MESSAGE_LEVELS.INFO %}
-  <p
-    id="message-timer"
-    class="alert alert-info float-center text-center message-text custom-secondary-button"
-  >
-    <i class="fa-solid fa-trash"></i>&nbsp;&nbsp;&nbsp;{{ message}}
-  </p>
-  {% endif %} {% endfor %}
+    {% for message in messages %}
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+        <p
+          id="message-timer"
+          class="alert alert-info float-center text-center message-text custom-secondary-button">
+          <i class="fa-solid fa-trash"></i>&nbsp;&nbsp;&nbsp;{{ message}}</p>
+      {% endif %}
+    {% endfor %}
 
   <body>
     <br />
